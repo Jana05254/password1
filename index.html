@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تحليل كلمة المرور</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; padding: 30px; }
+        .box { background: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px #ccc; }
+        .result { margin-top: 15px; padding: 10px; border-radius: 5px; color: white; font-weight: bold; }
+        .green { background-color: green; }
+        .orange { background-color: orange; }
+        .red { background-color: red; }
+        ul { padding: 0 20px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>🔐 تحليل قوة كلمة المرور</h2>
+        <form method="post">
+            <input type="password" name="password" placeholder="كلمة المرور" style="width:100%; padding:10px;" required>
+            <br><br>
+            <button type="submit">تحليل</button>
+        </form>
+
+        {% if results %}
+        <div class="result {{ results.color }}">
+            <p>
